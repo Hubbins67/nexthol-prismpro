@@ -29,14 +29,14 @@ X-Play is designed to address the number 1 pain point when customers deal with a
 There are no other tools in the market taking this approach and has the power to combine intelligence and codeless automation. The power of X-FIT and X-Play allows the customer to truly leverage the machine data the HCI infrastructure produces and operate it efficiently, confidently, and intelligently.
 
 Takeaways
-Prism Pro is our solution to make IT OPS smarter and automated. It covers the IT OPS process ranging from intelligent detection to automated remediation.
-X-FIT is our machine learning engine to support smart IT OPS, including forecast, anomaly detection, and inefficiency detection.
-X-Play, the IFTTT for the enterprise, is our engine to enable the automation of daily operations tasks. 
-X-Play enables admins to confidently automate their daily tasks within minutes. 
-X-Play is extensive that can use customer’s existing APIs and scripts as part of its playbooks.
+.........
 
+#. Prism Pro is our solution to make IT OPS smarter and automated. It covers the IT OPS process ranging from intelligent detection to automated remediation.
+#. X-FIT is our machine learning engine to support smart IT OPS, including forecast, anomaly detection, and inefficiency detection.
+#. X-Play, the IFTTT for the enterprise, is our engine to enable the automation of daily operations tasks. 
+#. X-Play enables admins to confidently automate their daily tasks within minutes. 
+#. X-Play is extensive that can use customer’s existing APIs and scripts as part of its playbooks.
 
-**In this lab you will create multiple different X-Play alert policies and playbooks to become familiar with the functionality and ease of use offered by this Prism Pro feature.**
 
 Lab Setup
 +++++++++
