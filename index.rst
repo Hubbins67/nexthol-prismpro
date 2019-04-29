@@ -41,30 +41,53 @@ Takeaways
 Lab Setup
 +++++++++
 
-This lab requires applications provisioned as part of the :ref:`linux_tools_vm`.
+This lab requires a VM to be provisioned and will be stressed latter in the lab to produce CPU and memory metrics.
 
-If you have not yet deployed this VM, see the linked steps before proceeding with the lab.
+#. Open Google Chrome and log in to the Prism Central UI, if not done so already.
+#. Navigate using the Hamburger menu to Virtual Infrastructure > VMs and click on the List view.
+#. Click the Create VM button. 
 
-Enabling X-Play
-...............
+   .. figure:: images/ppro_01.png
 
-X-Play is available as a hidden, Tech Preview in AOS 5.10 and will GA in AOS 5.11. Follow the steps below to enable X-Play on AOS 5.10:
+#. Name it ‘PrismProVM’ this is important for some of our setup scripts to run properly, so make sure it matches exactly.
 
-#. Open **Google Chrome** and select **View > Developer > Developer Tools**.
+   .. figure:: images/ppro_02.png
 
-   .. figure:: images/xplay_42.png
+#. Add two 2 VCPUs, 1 core per VCPU, 2GB memory.
 
-#. Click **Application**, and expand **Local Storage** under **Storage** on the right pane.
+   .. figure:: images/ppro_03.png
 
-#. Add the following entry by double-clicking:
+#. Click the ‘Add New Disk’ button. Choose to Clone from the Image service and select the CentOS7.qcow2 image, then click ‘Add’
 
-   - **nutanix_ui_release**  - 5.11
+   .. figure:: images/ppro_04.png
 
-   .. figure:: images/xplay_43.png
+#. Select the ‘Add a NIC’ button. Use the 'Primary' VLAN and click Add.
 
-#. Close **Developer Tools**.
+   .. figure:: images/ppro_05.png
 
-#. Browse to your Prism Central IP and refresh the page.
+#. Now Save the VM and Power it on once it is created.
+
+   .. figure:: images/ppro_06.png
+
+#. With the Prism Central page open in the current Google Chrome window, click on the ‘Enable X-Play Tech Preview’ bookmark to enable the X-Play Tech Preview. It will refresh the UI when complete.
+
+   .. figure:: images/ppro_07.png
+
+#. Open a new tab and navigate to the webpage at http://10.45.32.157:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab.
+
+   .. figure:: images/ppro_08.png
+
+#. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through Story 1 and 2.
+
+
+
+
+
+
+
+
+
+
 
 Automatically Add Memory to a VM When A Constraint is Detected
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
