@@ -176,6 +176,117 @@ In this lab story you will take a look at VMs with an anomaly. An anomaly is a d
 Lab Story 3 - Increase Constrained VM Memory with X-Play
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+In this lab story we will now create an X-Play to automatically add memory to the lab VM that was created ealier when a memory constraint is detected. 
+
+#. Click on the Hamburger menu and choose Operations > Playbooks.
+
+   .. figure:: images/ppro_26.png
+
+#. We will start by creating a Playbook. Click “Create Playbook” at the top of the table view
+
+   .. figure:: images/ppro_27.png
+
+#. Select Alert as a trigger
+
+   .. figure:: images/ppro_28.png
+
+#. Search and select “VM Memory Constrained” as the alert policy, since this is the issue we are looking to take automated steps to remediate.
+
+   .. figure:: images/ppro_29.png
+
+#. We will first need to snapshot the VM. Click “Add Action” on the left side to add the snapshot action.
+
+   .. figure:: images/ppro_30.png
+
+
+#. Select “Source Entity” from the parameters. Source entity means the entity triggers the alert.
+
+   .. figure:: images/ppro_31.png
+
+   .. figure:: images/ppro_32.png
+
+#. Next we would like to remediate the constrained memory by adding more memory to the VM. Click “Add Action” to add the hot add memory action
+
+   .. figure:: images/ppro_33.png
+
+#. Select source entity for the target VM, and set rest of field according to the screen below.
+
+   .. figure:: images/ppro_34.png
+
+
+#. Next we would like to notify someone that an automated action was taken. Click “Add Action” to add the email action
+
+   .. figure:: images/ppro_35.png
+
+#. Fill in the field in the email action. Here are the examples
+Recipient: use your email email address
+
+Subject : 
+Playbook {{playbook.playbook_name}} addressed alert {{trigger[0].alert_entity_info.name}}
+
+Message: 
+Prism Pro X-FIT detected  {{trigger[0].alert_entity_info.name}} in {{trigger[0].source_entity_info.name}}.  Prism Pro X-Play has run the playbook of "{{playbook.playbook_name}}". As a result, Prism Pro increased 1GB memory in {{trigger[0].source_entity_info.name}}. 
+
+The attendee is encouraged to compose their own subject tor message. The above is just an example. They are encouraged to use “parameter” to enrich the message. 
+
+Note: there is a bug right now that when you click a parameter in the “parameter” popup, the parameter string will be appended at the end of the text string, not at the place of the cursor. You have to cut and paste it into the correct place if that is the case. 
+
+   .. figure:: images/ppro_36.png
+
+#. Click “Add Action” to add “Acknowledge Alert” action
+
+   .. figure:: images/ppro_37.png
+
+#. Select “Alert” in the parameter pop up.
+
+   .. figure:: images/ppro_38.png
+
+#. Click “Save & Close” button and save it with a name “Auto Increase Constrained VM Memory” and make sure toggle the enable button.
+
+   .. figure:: images/ppro_39.png
+
+#. You should see a new playbook in the “Playbooks” list page. 
+
+   .. figure:: images/ppro_40.png
+
+#. Search VM “PrismProVM” and record the current memory capacity.
+
+   .. figure:: images/ppro_41.png
+
+#. Switch tabs back to the http://10.45.32.157:3000/ page and continue to the Story 3 Step. 
+
+   .. figure:: images/ppro_42.png
+
+#. Now we will simulate an alert for ‘VM Memory Constrained’ which will trigger the Playbook we just created. Click the ‘Simulate Alert’ button to create the alert.
+
+   .. figure:: images/ppro_43.png
+
+#. Check the “PrismProVM” page again, you should now see the memory capacity is increased by 1GB.
+
+#. You should also receive an email. Check the email to see that its subject and email body have filled the real value for the parameters you set up.
+
+#. Go to the “Playbook” page, click the playbook you just created and click the “disable” button in the upper right corner to disable this playbook
+
+   .. figure:: images/ppro_44.png
+
+#. Click the “Plays” tab, you should see that a play has just completed. 
+
+   .. figure:: images/ppro_45.png
+
+#. Click the “Play” to examine the details
+
+   .. figure:: images/ppro_46.png
+
+
+Lab Story 4 - Using X-Play with 3rd Party API
++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
 
 
 
