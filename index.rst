@@ -113,7 +113,7 @@ In this lab story you will take a look at VMs with an anomaly. An anomaly is a d
 
 #. Now let's take a take a look at a VM by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
 
-   .. figure:: images/ppro_23.png
+   .. figure:: images/ppro_61.png
 
 
 #. Go to Metrics > CPU Usage. Notice the expected range for this item has learned some patterns for the CPU Usage for this VM. Notice a dark blue line, and a lighter blue area around it. The line is the Memory Usage. The light blue area is the expected Memory Usage range for this VM. This range is calculated using Prism Pro’s X-FIT machine learning engine. In this case, an anomaly has been raised for this VM, because the Usage is far below the expected range. You can also reduce the time range “Last 24 hours” to examine the chart more closely.
