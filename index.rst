@@ -73,7 +73,7 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
 
    .. figure:: images/ppro_07.png
 
-#. Open a new tab and navigate to the webpage at http://10.45.32.157:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab.
+#. Open a new tab and navigate to the webpage at http://10.42.247.70:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab.
 
    .. figure:: images/ppro_08.png
 
@@ -131,7 +131,7 @@ In this lab story you will take a look at VMs with an anomaly. An anomaly is a d
 
 
 
-Lab Story 2 - Capacity Planning Runway
+Lab Story 3 - Capacity Planning Runway
 ++++++++++++++++++++++++++++++++++++++
 
 Capacity runway is a measure of the remaining capacity left within a given cluster or node. There is an overall cluster runway as well as individual runway measurements for CPU, Memory and storage capacity. Lets view the Capacity Runway of your lab cluster.
@@ -193,7 +193,7 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 
 
 
-Lab Story 3 - Increase Constrained VM Memory with X-Play
+Lab Story 4 - Increase Constrained VM Memory with X-Play
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In this lab story we will now create an X-Play to automatically add memory to the lab VM that was created ealier when a memory constraint is detected. 
@@ -273,7 +273,7 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_41.png
 
-#. Switch tabs back to the http://10.45.32.157:3000/ page and continue to the Story 3 Step. 
+#. Switch tabs back to the http://10.42.247.70:3000/ page and continue to the Story 3 Step. 
 
    .. figure:: images/ppro_42.png
 
@@ -298,7 +298,7 @@ Note: there is a bug right now that when you click a parameter in the “paramet
    .. figure:: images/ppro_46.png
 
 
-Lab Story 4 - Using X-Play with 3rd Party API
+Lab Story 5 - Using X-Play with 3rd Party API
 +++++++++++++++++++++++++++++++++++++++++++++
 
 For this story we will be using Habitica to show how we can use 3rd Party APIs with X-Play. Habitica is a free habit and productivity app that treats your real life like a game. We will be creating a task with Habitica.
@@ -356,7 +356,7 @@ Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_55.png
 
-#. Switch back to the other tab running http://10.45.32.157:3000/ and Simulate the ‘VM Bully Detected’ alert for Story 4.
+#. Switch back to the other tab running http://10.42.247.70:3000/ and Simulate the ‘VM Bully Detected’ alert for Story 4.
 
    .. figure:: images/ppro_56.png
 
