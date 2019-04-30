@@ -82,7 +82,40 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
 
 
 
-Lab Story 1 - Capacity Planning Runway
+Lab Story 1 - Anomaly Detection
++++++++++++++++++++++++++++++++
+
+In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-fit alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM. 
+
+#. In the search bar type in ‘bootcamp_constrained’ and select the option for `bootcamp_constrained_1`.
+
+   .. figure:: images/ppro_21.png
+
+#. Go to Metrics > Memory Usage. You can also reduce the time range “Last 24 hours” to examine the chart more closely. Notice a dark blue line, and a lighter blue rectangle. The line is the Memory Usage. The rectangle is the expected Memory Usage range for this VM. This range is calculated using Prism Pro’s X-FIT machine learning engine. In this case, there is an anomaly raised because the memory usage is way below its expected range. [NOTE: Need a new screenshot for this item]
+
+   .. figure:: images/ppro_22.png
+
+
+#. Now take a look at another VM, by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
+
+   .. figure:: images/ppro_23.png
+
+#. Go to Metrics > CPU Usage. You can also reduce the time range “Last 24 hours” to examine the chart more closely. Notice the expected range for this item hase learned some patterns for the CPU Usage for this VM. An anomaly has been raised for this VM, because the Usage is far outside of the expected range. [NOTE: Need a new screenshot for this item]
+
+   .. figure:: images/ppro_24.png
+
+#. Click “Alert Setting” to set an alert policy for this kind of situation.
+
+#. In the left hand side, you can change some of the configurations however you would like. In this example I have changed the Behavioral Anomaly threshold to ignore anomalies between 10% and 70%. All other anomalies will generate a Warning alert. I have also adjusted the Static threshold to Alert Critical if the CPU Usage on this VM exceeds 95%.
+
+   .. figure:: images/ppro_25.png
+
+#. Save the policy.
+
+
+
+
+Lab Story 2 - Capacity Planning Runway
 ++++++++++++++++++++++++++++++++++++++
 
 Capacity runway is a measure of the remaining capacity left within a given cluster or node. There is an overall cluster runway as well as individual runway measurements for CPU, Memory and storage capacity. Lets view the Capacity Runway of your lab cluster.
@@ -142,35 +175,6 @@ Capacity runway is a measure of the remaining capacity left within a given clust
    .. figure:: images/ppro_20.png
 
 
-Lab Story 2 - Anomaly Detection
-+++++++++++++++++++++++++++++++
-
-In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-fit alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM. 
-
-#. In the search bar type in ‘bootcamp_constrained’ and select the option for `bootcamp_constrained_1`.
-
-   .. figure:: images/ppro_21.png
-
-#. Go to Metrics > Memory Usage. You can also reduce the time range “Last 24 hours” to examine the chart more closely. Notice a dark blue line, and a lighter blue rectangle. The line is the Memory Usage. The rectangle is the expected Memory Usage range for this VM. This range is calculated using Prism Pro’s X-FIT machine learning engine. In this case, there is an anomaly raised because the memory usage is way below its expected range. [NOTE: Need a new screenshot for this item]
-
-   .. figure:: images/ppro_22.png
-
-
-#. Now take a look at another VM, by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
-
-   .. figure:: images/ppro_23.png
-
-#. Go to Metrics > CPU Usage. You can also reduce the time range “Last 24 hours” to examine the chart more closely. Notice the expected range for this item hase learned some patterns for the CPU Usage for this VM. An anomaly has been raised for this VM, because the Usage is far outside of the expected range. [NOTE: Need a new screenshot for this item]
-
-   .. figure:: images/ppro_24.png
-
-#. Click “Alert Setting” to set an alert policy for this kind of situation.
-
-#. In the left hand side, you can change some of the configurations however you would like. In this example I have changed the Behavioral Anomaly threshold to ignore anomalies between 10% and 70%. All other anomalies will generate a Warning alert. I have also adjusted the Static threshold to Alert Critical if the CPU Usage on this VM exceeds 95%.
-
-   .. figure:: images/ppro_25.png
-
-#. Save the policy.
 
 
 Lab Story 3 - Increase Constrained VM Memory with X-Play
