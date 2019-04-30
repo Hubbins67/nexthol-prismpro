@@ -80,29 +80,45 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
 #. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through Story 1 and 2.
 
 
+Lab Story 1 - VM Efficiency
++++++++++++++++++++++++++++
+
+Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running within the managed clusters. Then applies a classification to VMs that are learned to be inefficient. The following are short descriptions of the different classifications:
+
+* **Overprovisioned:** VMs identified as using minimal amounts of assigned resources.
+* **Inactive:** VMs that have been powered off for a period of time or that are running VMs that do not consume any CPU, memory, or I/O resources. 
+* **Constrained:** VMs that could see improved performance with additional resources. 
+* **Bully:** VMs identified as using an abundance of resources and affecting other VMs. 
 
 
-Lab Story 1 - Anomaly Detection
+#. If not already on the Dashboard, open the Hamburger menu and select the Dashboard. From the Dashboard, take a look at the VM Efficiency widget. This widget gives a summary of inefficient VMs that Prism Pro’s X-FIT machine learning has detected in your environment. Click on the ‘View All Inefficeint VMs’ link at the bottom of the widget to take a closer look.
+
+   .. figure:: images/ppro_58.png
+
+#. You are now viewing the Efficiency focus in the VMs list view with more details about why Prism Pro flagged these VMs. You can hover the text in the Efficiency detail column to view the full description.
+
+   .. figure:: images/ppro_59.png
+
+#. Once an admin has examined the list of VM on the efficiency list they can determine any that they wish to take action against. Form VMs that have too many or too little resources they will require the individual VMs to be resized. This can be done in a number of ways with a few examples listed below:
+
+* **Manually:** An admin edits the VM configuration via Prism or vCenter for ESXi VMs and changes the assigned resources.
+* **X-Play:** Use X-Plays automated play books to resize VM(s) automatically via a trigger or admins direction. There will be a lab story example of this later in this lab. 
+* **Automation:** Use some other method of automation such as powershell or REST-API to resize a VM. 
+
+
+Lab Story 2 - Anomaly Detection
 +++++++++++++++++++++++++++++++
 
 In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-fit alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM. 
 
-#. In the search bar type in ‘bootcamp_constrained’ and select the option for `bootcamp_constrained_1`.
-
-   .. figure:: images/ppro_21.png
-
-#. Go to Metrics > Memory Usage. You can also reduce the time range “Last 24 hours” to examine the chart more closely. Notice a dark blue line, and a lighter blue rectangle. The line is the Memory Usage. The rectangle is the expected Memory Usage range for this VM. This range is calculated using Prism Pro’s X-FIT machine learning engine. In this case, there is an anomaly raised because the memory usage is way below its expected range. [NOTE: Need a new screenshot for this item]
-
-   .. figure:: images/ppro_22.png
-
-
-#. Now take a look at another VM, by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
+#. Now let's take a take a look at a VM by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
 
    .. figure:: images/ppro_23.png
 
-#. Go to Metrics > CPU Usage. You can also reduce the time range “Last 24 hours” to examine the chart more closely. Notice the expected range for this item hase learned some patterns for the CPU Usage for this VM. An anomaly has been raised for this VM, because the Usage is far outside of the expected range. [NOTE: Need a new screenshot for this item]
 
-   .. figure:: images/ppro_24.png
+#. Go to Metrics > CPU Usage. Notice the expected range for this item has learned some patterns for the CPU Usage for this VM. Notice a dark blue line, and a lighter blue area around it. The line is the Memory Usage. The light blue area is the expected Memory Usage range for this VM. This range is calculated using Prism Pro’s X-FIT machine learning engine. In this case, an anomaly has been raised for this VM, because the Usage is far below the expected range. You can also reduce the time range “Last 24 hours” to examine the chart more closely.
+
+   .. figure:: images/ppro_60.png
 
 #. Click “Alert Setting” to set an alert policy for this kind of situation.
 
