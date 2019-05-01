@@ -69,16 +69,16 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
 
    .. figure:: images/ppro_06.png
 
-#. With the Prism Central page open in the current Google Chrome window, click on the ‘Enable X-Play Tech Preview’ bookmark to enable the X-Play Tech Preview. It will refresh the UI when complete.
-
-   .. figure:: images/ppro_07.png
 
 #. Open a new tab and navigate to the webpage at http://10.42.247.70:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab.
 
    .. figure:: images/ppro_08.png
 
-#. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through Story 1 and 2.
+#. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through Story 1 through 5.
 
+#. With the Prism Central page open in the current Google Chrome window, click on the ‘Enable X-Play Tech Preview’ bookmark to enable the X-Play Tech Preview. It will refresh the UI when complete.
+
+   .. figure:: images/ppro_07.png
 
 Lab Story 1 - VM Efficiency
 +++++++++++++++++++++++++++
@@ -99,7 +99,7 @@ Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running wit
 
    .. figure:: images/ppro_59.png
 
-#. Once an admin has examined the list of VM on the efficiency list they can determine any that they wish to take action against. Form VMs that have too many or too little resources they will require the individual VMs to be resized. This can be done in a number of ways with a few examples listed below:
+#. Once an admin has examined the list of VM on the efficiency list they can determine any that they wish to take action against. From VMs that have too many or too little resources they will require the individual VMs to be resized. This can be done in a number of ways with a few examples listed below:
 
 * **Manually:** An admin edits the VM configuration via Prism or vCenter for ESXi VMs and changes the assigned resources.
 * **X-Play:** Use X-Plays automated play books to resize VM(s) automatically via a trigger or admins direction. There will be a lab story example of this later in this lab. 
@@ -109,7 +109,7 @@ Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running wit
 Lab Story 2 - Anomaly Detection
 +++++++++++++++++++++++++++++++
 
-In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-fit alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM. 
+In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-FIT alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM. 
 
 #. Now let's take a take a look at a VM by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
 
