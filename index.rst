@@ -278,7 +278,7 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
 #. **Switch tabs back to** the http://10.42.247.70:3000/ page and continue to the Story 1-3 Step. 
 
-   .. figure:: images/ppro_42.png
+   .. figure:: images/ppro_66.png
 
 #. Now we will simulate an alert for ‘VM Memory Constrained’ which will trigger the Playbook we just created. Click the ‘Simulate Alert’ button to create the alert.
 
