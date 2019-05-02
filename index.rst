@@ -57,9 +57,9 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
 
    .. figure:: images/ppro_03.png
 
-#. Click the ‘Add New Disk’ button. Choose to Clone from the Image service and select the CentOS7.qcow2 image, then click ‘Add’
+#. Click the ‘Add New Disk’ button. Choose to Clone from the Image service and select the Linux_ToolsVM.qcow2 image, then click ‘Add’
 
-   .. figure:: images/ppro_04.png
+   .. figure:: images/ppro_62.png
 
 #. Select the ‘Add a NIC’ button. Use the 'Primary' VLAN and click Add.
 
