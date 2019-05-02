@@ -202,7 +202,7 @@ In this lab story we will now create an X-Play to automatically add memory to th
 
    .. figure:: images/ppro_26.png
 
-#. We will start by creating a Playbook. Click “Create Playbook” at the top of the table view
+#. We will start by creating a Playbook. Click **Create Playbook** at the top of the table view
 
    .. figure:: images/ppro_27.png
 
@@ -210,35 +210,38 @@ In this lab story we will now create an X-Play to automatically add memory to th
 
    .. figure:: images/ppro_28.png
 
-#. Search and select “VM Memory Constrained” as the alert policy, since this is the issue we are looking to take automated steps to remediate.
+#. Search and select **VM Memory Constrained** as the alert policy, since this is the issue we are looking to take automated steps to remediate.
 
    .. figure:: images/ppro_29.png
 
-#. We will first need to snapshot the VM. Click “Add Action” on the left side to add the snapshot action.
+#. We will first need to snapshot the VM. Click **Add Action** on the left side and select the **VM snapshot** action.
 
    .. figure:: images/ppro_30.png
 
 
-#. Select “Source Entity” from the parameters. Source entity means the entity triggers the alert.
+#. Select **Source Entity** from the parameters link below field. Source entity means the entity triggers the alert.
 
    .. figure:: images/ppro_31.png
 
+#. Enter a **1** in the Time to Live field.
+
    .. figure:: images/ppro_32.png
 
-#. Next we would like to remediate the constrained memory by adding more memory to the VM. Click “Add Action” to add the hot add memory action
+#. Next we would like to remediate the constrained memory by adding more memory to the VM. Click **Add Action** to add the **Hot add memory** action
 
    .. figure:: images/ppro_33.png
 
-#. Select source entity for the target VM, and set rest of field according to the screen below.
+#. Select **source entity** from parameters link for the target VM field, and set rest of field according to the screen below.
 
    .. figure:: images/ppro_34.png
 
 
-#. Next we would like to notify someone that an automated action was taken. Click “Add Action” to add the email action
+#. Next we would like to notify someone that an automated action was taken. Click **Add Action** to add the email action
 
    .. figure:: images/ppro_35.png
 
 #. Fill in the field in the email action. Here are the examples
+
 Recipient: use your email email address
 
 Subject : 
