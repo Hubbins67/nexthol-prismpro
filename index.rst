@@ -242,12 +242,12 @@ In this lab story we will now create an X-Play to automatically add memory to th
 
 #. Fill in the field in the email action. Here are the examples
 
-Recipient: use your email email address
+**Recipient:** use your email email address
 
-Subject : 
+**Subject :** 
 Playbook {{playbook.playbook_name}} addressed alert {{trigger[0].alert_entity_info.name}}
 
-Message: 
+**Message:** 
 Prism Pro X-FIT detected  {{trigger[0].alert_entity_info.name}} in {{trigger[0].source_entity_info.name}}.  Prism Pro X-Play has run the playbook of "{{playbook.playbook_name}}". As a result, Prism Pro increased 1GB memory in {{trigger[0].source_entity_info.name}}. 
 
 The attendee is encouraged to compose their own subject tor message. The above is just an example. They are encouraged to use “parameter” to enrich the message. 
@@ -256,15 +256,15 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_36.png
 
-#. Click “Add Action” to add “Acknowledge Alert” action
+#. Click **Add Action** to add the **Acknowledge Alert** action
 
    .. figure:: images/ppro_37.png
 
-#. Select “Alert” in the parameter pop up.
+#. Select **Alert** in the parameter link pop up.
 
    .. figure:: images/ppro_38.png
 
-#. Click “Save & Close” button and save it with a name “Auto Increase Constrained VM Memory” and make sure toggle the enable button.
+#. Click **Save & Close** button and save it with a name “Auto Increase Constrained VM Memory” and make sure toggle the **enable button**.
 
    .. figure:: images/ppro_39.png
 
@@ -272,27 +272,27 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_40.png
 
-#. Search VM “PrismProVM” and record the current memory capacity.
+#. Search VM “PrismProVM” and record the current memory capacity. You can scroll down in the properties widget to see the configured memory. 
 
    .. figure:: images/ppro_41.png
 
-#. **Switch tabs back to** the http://10.42.247.70:3000/ page and continue to the Story 3 Step. 
+#. **Switch tabs back to** the http://10.42.247.70:3000/ page and continue to the Story 1-3 Step. 
 
    .. figure:: images/ppro_42.png
 
 #. Now we will simulate an alert for ‘VM Memory Constrained’ which will trigger the Playbook we just created. Click the ‘Simulate Alert’ button to create the alert.
 
-   .. figure:: images/ppro_43.png
+   .. figure:: images/ppro_64.png
 
-#. Check the “PrismProVM” page again, you should now see the memory capacity is increased by 1GB.
+#. Go back to Prism page and check the “PrismProVM” page again, you should now see the memory capacity is increased by 1GB. If the memory does not show updated you can refresh the browser page to speedup the process. 
 
 #. You should also receive an email. Check the email to see that its subject and email body have filled the real value for the parameters you set up.
 
-#. Go to the “Playbook” page, click the playbook you just created and click the “disable” button in the upper right corner to disable this playbook
+#. Go to the **Playbook** page, click the playbook you just created and click the **disable** button in the upper right corner to disable this playbook
 
    .. figure:: images/ppro_44.png
 
-#. Click the “Plays” tab, you should see that a play has just completed. 
+#. Click the **Plays** tab, you should see that a play has just completed. 
 
    .. figure:: images/ppro_45.png
 
@@ -316,34 +316,35 @@ For this story we will be using Habitica to show how we can use 3rd Party APIs w
    .. figure:: images/ppro_48.png
 
 #. We are creating a template that we can later use in our playbook to create a Task in Habitica. Fill in the following values replacing your name in the <YOUR NAME HERE> part.
-Name: Create Habitica Task
 
-Method: POST
+**Name:** Create Habitica Task
 
-URL: https://habitica.com/api/v3/tasks/user
+**Method:** POST
 
-Request Body: {"text":"<YOUR NAME HERE> Check {{trigger[0].source_entity_info.name}}","type":"todo","notes":"VM has been detected as a bully VM and has been temporarily powered off.","priority":2}
+**URL:** https://habitica.com/api/v3/tasks/user
 
-Request Header:
+**Request Body:** {"text":"<YOUR NAME HERE> Check {{trigger[0].source_entity_info.name}}","type":"todo","notes":"VM has been detected as a bully VM and has been temporarily powered off.","priority":2}
+
+**Request Header:**
 x-api-user:fbc6077f-89a7-46e1-adf0-470ddafc43cf
 x-api-key:c5343abe-707a-4f7c-8f48-63b57f52257b
 Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_49.png
 
-#. Save the template.
+#. Click the **copy** button to save the template.
 
 #. Navigate using the Hamburger menu back to Operations > Playbooks and click the Create Playbook button.
 
-#. Select the Alert trigger and search for and select the alert policy ‘VM Bully Detected’. This is the alert that we would like to act on to handle when the system detects a Bully VM.
+#. Select the **Alert trigger** and search for and select the alert policy **VM Bully Detected**. This is the alert that we would like to act on to handle when the system detects a Bully VM.
 
    .. figure:: images/ppro_50.png
 
-#. The first thing we would like to do is Power off the VM, so we can make sure it is not starving other VMs of resources. Click the ‘Add Action’ button and select ‘Power Off VM’. Select the Parameter for ‘Source Entity’ as you did in Story 3. 
+#. The first thing we would like to do is Power off the VM, so we can make sure it is not starving other VMs of resources. Click the **Add Action** button and select **Power Off VM**. Select the Parameter for **Source Entity** as you did in Story 3. 
 
    .. figure:: images/ppro_51.png
 
-#. Also be sure to select ‘Power off’ for Type of Power Off Action.
+#. Also be sure to select **Power off** for Type of Power Off Action.
 
    .. figure:: images/ppro_52.png
 
@@ -359,9 +360,9 @@ Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_55.png
 
-#. **Switch back to the other tab** running http://10.42.247.70:3000/ and Simulate the ‘VM Bully Detected’ alert for Story 4.
+#. **Switch back to the other tab** running http://10.42.247.70:3000/ and Simulate the ‘VM Bully Detected’ alert for Story 5.
 
-   .. figure:: images/ppro_56.png
+   .. figure:: images/ppro_65.png
 
 #. Once the alert is successfully simulated, you can log in to Habitica in another tab at https://habitica.com using the credentials:
 
