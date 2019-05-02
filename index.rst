@@ -72,7 +72,7 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
 
 #. Right click the following URL to open a new tab and navigate to the webpage at http://10.42.247.70:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab. **Keep this tab open during entire Prism Pro lab to return to as directed in later portions**
 
-   .. figure:: images/ppro_08.png
+   .. figure:: images/ppro_63.png
 
 #. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through Story 1 through 5.
 
@@ -120,7 +120,7 @@ In this lab story you will take a look at VMs with an anomaly. An anomaly is a d
 
    .. figure:: images/ppro_60.png
 
-#. Click “Alert Setting” to set an alert policy for this kind of situation.
+#. Click **“Alert Setting”** to set an alert policy for this kind of situation.
 
 #. In the left hand side, you can change some of the configurations however you would like. In this example I have changed the Behavioral Anomaly threshold to ignore anomalies between 10% and 70%. All other anomalies will generate a Warning alert. I have also adjusted the Static threshold to Alert Critical if the CPU Usage on this VM exceeds 95%.
 
@@ -140,7 +140,7 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 
    .. figure:: images/ppro_09.png
 
-#. Click on the ‘Capacity Runway’ tab and select the cluster ‘Prism-Pro-Cluster’.
+#. Click on the **‘Capacity Runway’** tab and select the cluster ‘Prism-Pro-Cluster’.
 
    .. figure:: images/ppro_10.png
    
@@ -154,15 +154,15 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 
    .. figure:: images/ppro_13.png
 
-#. Click on the ‘Optimize Resources’ button. This is where you can see the inefficient VMs in the environment with suggestions on how you can optimize these resources to be as efficient as possible.
+#. Click on the **‘Optimize Resources’** button on left. This is where you can see the inefficient VMs in the environment with suggestions on how you can optimize these resources to be as efficient as possible.
 
    .. figure:: images/ppro_14.png
 
 #. Close the optimize resources popup.
 
-#. Under the ‘Adjust Resources’ section in the left side of this page, click the ‘Get Started’ button. We can now use this to start planning for new workloads and see how runway will need to be extended in the future.
+#. Under the **‘Adjust Resources’** section in the left side of this page, click the **‘Get Started’** button. We can now use this to start planning for new workloads and see how runway will need to be extended in the future.
 
-#. Click the add/adjust button in the left side underneath the ‘Workloads’ item.
+#. Click the **add/adjust** button in the left side underneath the ‘Workloads’ item.
 
    .. figure:: images/ppro_15.png
 
@@ -174,7 +174,7 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 
 #. Add another workload of your choice.
 
-#. Now click the ‘Recommend’ button on the right side of the page. 
+#. Now click the **‘Recommend’** button on the right side of the page. 
 
    .. figure:: images/ppro_18.png
 
@@ -182,7 +182,7 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 
    .. figure:: images/ppro_19.png
 
-#. Click the Generate PDF button in the upper right hand corner. This will open a new tab with a PDF report for the scenario/workloads you have created.
+#. Click the **Generate PDF** button in the upper right hand corner. This will open a new tab with a PDF report for the scenario/workloads you have created.
 
    .. figure:: images/ppro_19b.png
 
