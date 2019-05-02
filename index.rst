@@ -70,7 +70,7 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
    .. figure:: images/ppro_06.png
 
 
-#. Open a new tab and navigate to the webpage at http://10.42.247.70:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab.
+#. Right click the following URL to open a new tab and navigate to the webpage at http://10.42.247.70:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab. **Keep this tab open during entire Prism Pro lab to return to as directed in later portions**
 
    .. figure:: images/ppro_08.png
 
@@ -273,7 +273,7 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_41.png
 
-#. Switch tabs back to the http://10.42.247.70:3000/ page and continue to the Story 3 Step. 
+#. **Switch tabs back to** the http://10.42.247.70:3000/ page and continue to the Story 3 Step. 
 
    .. figure:: images/ppro_42.png
 
@@ -356,11 +356,11 @@ Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_55.png
 
-#. Switch back to the other tab running http://10.42.247.70:3000/ and Simulate the ‘VM Bully Detected’ alert for Story 4.
+#. **Switch back to the other tab** running http://10.42.247.70:3000/ and Simulate the ‘VM Bully Detected’ alert for Story 4.
 
    .. figure:: images/ppro_56.png
 
-#. Once the alert is successfully simulated, you can log in to Habitica at https://habitica.com using the credentials:
+#. Once the alert is successfully simulated, you can log in to Habitica in another tab at https://habitica.com using the credentials:
 
 Username : next19LabUser
 Password: Nutanix.123
