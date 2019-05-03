@@ -122,7 +122,7 @@ In this lab story you will take a look at VMs with an anomaly. An anomaly is a d
 
 #. Click **“Alert Setting”** to set an alert policy for this kind of situation.
 
-#. In the left hand side, you can change some of the configurations however you would like. In this example I have changed the Behavioral Anomaly threshold to ignore anomalies between 10% and 70%. All other anomalies will generate a Warning alert. I have also adjusted the Static threshold to Alert Critical if the CPU Usage on this VM exceeds 95%.
+#. In the right hand side, you can change some of the configurations however you would like. In this example I have changed the Behavioral Anomaly threshold to ignore anomalies between 10% and 70%. All other anomalies will generate a Warning alert. I have also adjusted the Static threshold to Alert Critical if the CPU Usage on this VM exceeds 95%.
 
    .. figure:: images/ppro_25.png
 
@@ -196,7 +196,7 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 Lab Story 4 - Increase Constrained VM Memory with X-Play
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-In this lab story we will now create an X-Play to automatically add memory to the lab VM that was created ealier when a memory constraint is detected.
+In this lab story we will now use X-Play to create a Playbook to automatically add memory to the lab VM that was created earlier, when a memory constraint is detected.
 
 #. Click on the Hamburger menu and choose Operations > Playbooks.
 
@@ -326,8 +326,11 @@ For this story we will be using Habitica to show how we can use 3rd Party APIs w
 **Request Body:** {"text":"<YOUR NAME HERE> Check {{trigger[0].source_entity_info.name}}","type":"todo","notes":"VM has been detected as a bully VM and has been temporarily powered off.","priority":2}
 
 **Request Header:**
+
 x-api-user:fbc6077f-89a7-46e1-adf0-470ddafc43cf
+
 x-api-key:c5343abe-707a-4f7c-8f48-63b57f52257b
+
 Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_49.png
