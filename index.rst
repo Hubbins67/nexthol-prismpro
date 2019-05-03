@@ -12,7 +12,7 @@
 .. _xplay:
 
 ------------------------
-Prism Pro: X-Play
+Prism Pro
 ------------------------
 
 *The estimated time to complete this lab is 60 minutes.*
@@ -20,11 +20,11 @@ Prism Pro: X-Play
 Overview
 ++++++++
 
-Prism Pro is a product designed to make our customer IT operations smarter and automated. Today, there is no solution that is specifically designed for IT operations for the data center built around HCI. The infrastructure in this type of data center is dynamic, scalable, and highly performed. The traditional performance monitoring and IT OPS tools are built for the static infrastructure. When the IT admins use the traditional tool to manage HCI environment, they are overwhelmed by the complexity and noisy signal the tool brings. This decreases the productivity of the operations and reduces the ROI from adopting the HCI. 
+Prism Pro is a product designed to make our customer IT operations smarter and automated. Today, there is no solution that is specifically designed for IT operations for the data center built around HCI. The infrastructure in this type of data center is dynamic, scalable, and highly performed. The traditional performance monitoring and IT OPS tools are built for the static infrastructure. When the IT admins use the traditional tool to manage HCI environment, they are overwhelmed by the complexity and noisy signal the tool brings. This decreases the productivity of the operations and reduces the ROI from adopting the HCI.
 
-Prism Pro takes a unique approach that maximizes the operation efficiency of an HCI based data center. First, Prism Pro uses purpose-built machine learning (X-FIT) to extract the insights from the mass amount of operations data the HCI produces. The first three use cases Prism Pro shipped are capacity forecast and planning, VM right sizing, and anomaly detection. These use cases help our customer detect problems and waste with the actionable signal. Second, Prism Pro delivers an automation mechanism (X-Play) that enables customers to automate their operations tasks confidently to respond to the signal X-FIT detects. 
+Prism Pro takes a unique approach that maximizes the operation efficiency of an HCI based data center. First, Prism Pro uses purpose-built machine learning (X-FIT) to extract the insights from the mass amount of operations data the HCI produces. The first three use cases Prism Pro shipped are capacity forecast and planning, VM right sizing, and anomaly detection. These use cases help our customer detect problems and waste with the actionable signal. Second, Prism Pro delivers an automation mechanism (X-Play) that enables customers to automate their operations tasks confidently to respond to the signal X-FIT detects.
 
-X-Play is designed to address the number 1 pain point when customers deal with automation - the fear of amplified impact because of the complexity of the automation. Not like the solution, such as Calm,  for the application lifecycle automation, X-Play’s goal is to automate the tasks that admins face daily. To eliminate the fear and give the control back to the admin, X-Play takes the codeless approach which has been proven in the companies such as IFTTT and Zapier that it is easy to adopt and extremely versatile.  
+X-Play is designed to address the number 1 pain point when customers deal with automation - the fear of amplified impact because of the complexity of the automation. Not like the solution, such as Calm,  for the application lifecycle automation, X-Play’s goal is to automate the tasks that admins face daily. To eliminate the fear and give the control back to the admin, X-Play takes the codeless approach which has been proven in the companies such as IFTTT and Zapier that it is easy to adopt and extremely versatile.
 
 There are no other tools in the market taking this approach and has the power to combine intelligence and codeless automation. The power of X-FIT and X-Play allows the customer to truly leverage the machine data the HCI infrastructure produces and operate it efficiently, confidently, and intelligently.
 
@@ -33,8 +33,8 @@ Takeaways
 
 #. Prism Pro is our solution to make IT OPS smarter and automated. It covers the IT OPS process ranging from intelligent detection to automated remediation.
 #. X-FIT is our machine learning engine to support smart IT OPS, including forecast, anomaly detection, and inefficiency detection.
-#. X-Play, the IFTTT for the enterprise, is our engine to enable the automation of daily operations tasks. 
-#. X-Play enables admins to confidently automate their daily tasks within minutes. 
+#. X-Play, the IFTTT for the enterprise, is our engine to enable the automation of daily operations tasks.
+#. X-Play enables admins to confidently automate their daily tasks within minutes.
 #. X-Play is extensive that can use customer’s existing APIs and scripts as part of its playbooks.
 
 
@@ -45,7 +45,7 @@ This lab requires a VM to be provisioned and will be stressed latter in the lab 
 
 #. Open Google Chrome and log in to the Prism Central UI, if not done so already.
 #. Navigate using the Hamburger menu to Virtual Infrastructure > VMs and click on the List view.
-#. Click the Create VM button. 
+#. Click the Create VM button.
 
    .. figure:: images/ppro_01.png
 
@@ -86,9 +86,9 @@ Lab Story 1 - VM Efficiency
 Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running within the managed clusters. Then applies a classification to VMs that are learned to be inefficient. The following are short descriptions of the different classifications:
 
 * **Overprovisioned:** VMs identified as using minimal amounts of assigned resources.
-* **Inactive:** VMs that have been powered off for a period of time or that are running VMs that do not consume any CPU, memory, or I/O resources. 
-* **Constrained:** VMs that could see improved performance with additional resources. 
-* **Bully:** VMs identified as using an abundance of resources and affecting other VMs. 
+* **Inactive:** VMs that have been powered off for a period of time or that are running VMs that do not consume any CPU, memory, or I/O resources.
+* **Constrained:** VMs that could see improved performance with additional resources.
+* **Bully:** VMs identified as using an abundance of resources and affecting other VMs.
 
 
 #. If not already on the Dashboard, open the Hamburger menu and select the Dashboard. From the Dashboard, take a look at the VM Efficiency widget. This widget gives a summary of inefficient VMs that Prism Pro’s X-FIT machine learning has detected in your environment. Click on the ‘View All Inefficeint VMs’ link at the bottom of the widget to take a closer look.
@@ -102,14 +102,14 @@ Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running wit
 #. Once an admin has examined the list of VM on the efficiency list they can determine any that they wish to take action against. From VMs that have too many or too little resources they will require the individual VMs to be resized. This can be done in a number of ways with a few examples listed below:
 
 * **Manually:** An admin edits the VM configuration via Prism or vCenter for ESXi VMs and changes the assigned resources.
-* **X-Play:** Use X-Plays automated play books to resize VM(s) automatically via a trigger or admins direction. There will be a lab story example of this later in this lab. 
-* **Automation:** Use some other method of automation such as powershell or REST-API to resize a VM. 
+* **X-Play:** Use X-Plays automated play books to resize VM(s) automatically via a trigger or admins direction. There will be a lab story example of this later in this lab.
+* **Automation:** Use some other method of automation such as powershell or REST-API to resize a VM.
 
 
 Lab Story 2 - Anomaly Detection
 +++++++++++++++++++++++++++++++
 
-In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-FIT alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM. 
+In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-FIT alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM.
 
 #. Now let's take a take a look at a VM by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
 
@@ -143,7 +143,7 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 #. Click on the **‘Capacity Runway’** tab and select the cluster ‘Prism-Pro-Cluster’.
 
    .. figure:: images/ppro_10.png
-   
+
    .. figure:: images/ppro_11.png
 
 #. You can now take a look at the Runway for Storage, CPU, and Memory.
@@ -174,11 +174,11 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 
 #. Add another workload of your choice.
 
-#. Now click the **‘Recommend’** button on the right side of the page. 
+#. Now click the **‘Recommend’** button on the right side of the page.
 
    .. figure:: images/ppro_18.png
 
-#. Once the Recommendation is available, toggle between list and chart view to get a better overview of your Scenario. 
+#. Once the Recommendation is available, toggle between list and chart view to get a better overview of your Scenario.
 
    .. figure:: images/ppro_19.png
 
@@ -196,7 +196,7 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 Lab Story 4 - Increase Constrained VM Memory with X-Play
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-In this lab story we will now create an X-Play to automatically add memory to the lab VM that was created ealier when a memory constraint is detected. 
+In this lab story we will now create an X-Play to automatically add memory to the lab VM that was created ealier when a memory constraint is detected.
 
 #. Click on the Hamburger menu and choose Operations > Playbooks.
 
@@ -244,15 +244,15 @@ In this lab story we will now create an X-Play to automatically add memory to th
 
 **Recipient:** use your email email address
 
-**Subject :** 
+**Subject :**
 Playbook {{playbook.playbook_name}} addressed alert {{trigger[0].alert_entity_info.name}}
 
-**Message:** 
-Prism Pro X-FIT detected  {{trigger[0].alert_entity_info.name}} in {{trigger[0].source_entity_info.name}}.  Prism Pro X-Play has run the playbook of "{{playbook.playbook_name}}". As a result, Prism Pro increased 1GB memory in {{trigger[0].source_entity_info.name}}. 
+**Message:**
+Prism Pro X-FIT detected  {{trigger[0].alert_entity_info.name}} in {{trigger[0].source_entity_info.name}}.  Prism Pro X-Play has run the playbook of "{{playbook.playbook_name}}". As a result, Prism Pro increased 1GB memory in {{trigger[0].source_entity_info.name}}.
 
-The attendee is encouraged to compose their own subject tor message. The above is just an example. They are encouraged to use “parameter” to enrich the message. 
+The attendee is encouraged to compose their own subject tor message. The above is just an example. They are encouraged to use “parameter” to enrich the message.
 
-Note: there is a bug right now that when you click a parameter in the “parameter” popup, the parameter string will be appended at the end of the text string, not at the place of the cursor. You have to cut and paste it into the correct place if that is the case. 
+Note: there is a bug right now that when you click a parameter in the “parameter” popup, the parameter string will be appended at the end of the text string, not at the place of the cursor. You have to cut and paste it into the correct place if that is the case.
 
    .. figure:: images/ppro_36.png
 
@@ -268,15 +268,15 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_39.png
 
-#. You should see a new playbook in the “Playbooks” list page. 
+#. You should see a new playbook in the “Playbooks” list page.
 
    .. figure:: images/ppro_40.png
 
-#. Search VM “PrismProVM” and record the current memory capacity. You can scroll down in the properties widget to see the configured memory. 
+#. Search VM “PrismProVM” and record the current memory capacity. You can scroll down in the properties widget to see the configured memory.
 
    .. figure:: images/ppro_41.png
 
-#. **Switch tabs back to** the http://10.42.247.70:3000/ page and continue to the Story 1-3 Step. 
+#. **Switch tabs back to** the http://10.42.247.70:3000/ page and continue to the Story 1-3 Step.
 
    .. figure:: images/ppro_66.png
 
@@ -284,7 +284,7 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_64.png
 
-#. Go back to Prism page and check the “PrismProVM” page again, you should now see the memory capacity is increased by 1GB. If the memory does not show updated you can refresh the browser page to speedup the process. 
+#. Go back to Prism page and check the “PrismProVM” page again, you should now see the memory capacity is increased by 1GB. If the memory does not show updated you can refresh the browser page to speedup the process.
 
 #. You should also receive an email. Check the email to see that its subject and email body have filled the real value for the parameters you set up.
 
@@ -292,7 +292,7 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_44.png
 
-#. Click the **Plays** tab, you should see that a play has just completed. 
+#. Click the **Plays** tab, you should see that a play has just completed.
 
    .. figure:: images/ppro_45.png
 
@@ -340,7 +340,7 @@ Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_50.png
 
-#. The first thing we would like to do is Power off the VM, so we can make sure it is not starving other VMs of resources. Click the **Add Action** button and select **Power Off VM**. Select the Parameter for **Source Entity** as you did in Story 3. 
+#. The first thing we would like to do is Power off the VM, so we can make sure it is not starving other VMs of resources. Click the **Add Action** button and select **Power Off VM**. Select the Parameter for **Source Entity** as you did in Story 3.
 
    .. figure:: images/ppro_51.png
 
@@ -372,10 +372,3 @@ Password: Nutanix.123
 And verify your task is created.
 
    .. figure:: images/ppro_57.png
-
-
-
-
-
-
-
