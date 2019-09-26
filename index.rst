@@ -7,7 +7,7 @@
   :name: _appendix
   :hidden:
 
-  linux_tools_vm_cloud-init
+  tools_vms/linux_tools_vm_cloud-init
 
 .. _xplay:
 
