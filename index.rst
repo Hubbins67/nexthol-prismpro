@@ -7,7 +7,7 @@
   :name: _appendix
   :hidden:
 
-  tools_vms/linux_tools_vm
+  linux_tools_vm_cloud-init
 
 .. _xplay:
 
@@ -24,61 +24,21 @@ Prism Pro is a product designed to make our customer IT operations smarter and a
 
 Prism Pro takes a unique approach that maximizes the operation efficiency of an HCI based data center. First, Prism Pro uses purpose-built machine learning (X-FIT) to extract the insights from the mass amount of operations data the HCI produces. The first three use cases Prism Pro shipped are capacity forecast and planning, VM right sizing, and anomaly detection. These use cases help our customer detect problems and waste with the actionable signal. Second, Prism Pro delivers an automation mechanism (X-Play) that enables customers to automate their operations tasks confidently to respond to the signal X-FIT detects.
 
-X-Play is designed to address the number 1 pain point when customers deal with automation - the fear of amplified impact because of the complexity of the automation. Not like the solution, such as Calm,  for the application lifecycle automation, X-Play’s goal is to automate the tasks that admins face daily. To eliminate the fear and give the control back to the admin, X-Play takes the codeless approach which has been proven in the companies such as IFTTT and Zapier that it is easy to adopt and extremely versatile.
-
-There are no other tools in the market taking this approach and has the power to combine intelligence and codeless automation. The power of X-FIT and X-Play allows the customer to truly leverage the machine data the HCI infrastructure produces and operate it efficiently, confidently, and intelligently.
-
-Takeaways
-.........
-
-#. Prism Pro is our solution to make IT OPS smarter and automated. It covers the IT OPS process ranging from intelligent detection to automated remediation.
-#. X-FIT is our machine learning engine to support smart IT OPS, including forecast, anomaly detection, and inefficiency detection.
-#. X-Play, the IFTTT for the enterprise, is our engine to enable the automation of daily operations tasks.
-#. X-Play enables admins to confidently automate their daily tasks within minutes.
-#. X-Play is extensive that can use customer’s existing APIs and scripts as part of its playbooks.
-
-
 Lab Setup
 +++++++++
 
-This lab requires a VM to be provisioned and will be stressed latter in the lab to produce CPU and memory metrics.
+This lab requires a VM to be provisioned and will be stressed later in the lab to produce CPU and memory metrics.
 
-#. Open Google Chrome and log in to the Prism Central UI, if not done so already.
-#. Navigate using the Hamburger menu to Virtual Infrastructure > VMs and click on the List view.
-#. Click the Create VM button.
+Applications provisioned as part of the  :ref:`linux_tools_vm_cloud-init` will be used to accomplish this.
 
-   .. figure:: images/ppro_01.png
-
-#. Name it ‘PrismProVM’ this is important for some of our setup scripts to run properly, so make sure it matches exactly.
-
-   .. figure:: images/ppro_02.png
-
-#. Add two 2 VCPUs, 1 core per VCPU, 2GB memory.
-
-   .. figure:: images/ppro_03.png
-
-#. Click the ‘Add New Disk’ button. Choose to Clone from the Image service and select the Linux_ToolsVM.qcow2 image, then click ‘Add’
-
-   .. figure:: images/ppro_62.png
-
-#. Select the ‘Add a NIC’ button. Use the 'Primary' VLAN and click Add.
-
-   .. figure:: images/ppro_05.png
-
-#. Now Save the VM and Power it on once it is created.
-
-   .. figure:: images/ppro_06.png
+#. Please follow the instructions to deploy the :ref:`linux_tools_vm_cloud-init` before moving on with this lab.
 
 
-#. Right click the following URL to open a new tab and navigate to the webpage at http://10.42.247.70:3000/ and enter your Prism Central IP Address. This will get your environment ready for this lab. **Keep this tab open during entire Prism Pro lab to return to as directed in later portions**
+#. Right click the following URL to open a new tab and navigate to the webpage at http://10.42.247.70 and enter the details in the Setup portion of the form. Then click 'Begin Setup' once you have filled in all the fields. This will get your environment ready for this lab. **Keep this tab open during entire Prism Pro lab to return to as directed in later portions.**
 
-   .. figure:: images/ppro_63.png
+   .. figure:: images/ppro_08.png
 
-#. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through Story 1 through 5.
-
-#. With the Prism Central page open in the current Google Chrome window, click on the ‘Enable X-Play Tech Preview’ bookmark to enable the X-Play Tech Preview. It will refresh the UI when complete.
-
-   .. figure:: images/ppro_07.png
+#. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through the labs.
 
 Lab Story 1 - VM Efficiency
 +++++++++++++++++++++++++++
@@ -106,17 +66,43 @@ Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running wit
 * **Automation:** Use some other method of automation such as powershell or REST-API to resize a VM.
 
 
-Lab Story 2 - Anomaly Detection
+VM Efficiency
++++++++++++++++++++++++++++
+
+Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running within the managed clusters. Then applies a classification to VMs that are learned to be inefficient. The following are short descriptions of the different classifications:
+
+* **Overprovisioned:** VMs identified as using minimal amounts of assigned resources.
+* **Inactive:** VMs that have been powered off for a period of time or that are running VMs that do not consume any CPU, memory, or I/O resources.
+* **Constrained:** VMs that could see improved performance with additional resources.
+* **Bully:** VMs identified as using an abundance of resources and affecting other VMs.
+
+#. In **Prism Central**, select :fa:`bars` **> Dashboard** (if not already there).
+
+#. From the Dashboard, take a look at the VM Efficiency widget. This widget gives a summary of inefficient VMs that Prism Pro’s X-FIT machine learning has detected in your environment. Click on the ‘View All Inefficeint VMs’ link at the bottom of the widget to take a closer look.
+
+   .. figure:: images/ppro_58.png
+
+#. You are now viewing the Efficiency focus in the VMs list view with more details about why Prism Pro flagged these VMs. You can hover the text in the Efficiency detail column to view the full description.
+
+   .. figure:: images/ppro_59.png
+
+#. Once an admin has examined the list of VM on the efficiency list they can determine any that they wish to take action against. From VMs that have too many or too little resources they will require the individual VMs to be resized. This can be done in a number of ways with a few examples listed below:
+
+* **Manually:** An admin edits the VM configuration via Prism or vCenter for ESXi VMs and changes the assigned resources.
+* **X-Play:** Use X-Plays automated play books to resize VM(s) automatically via a trigger or admins direction. There will be a lab story example of this later in this lab.
+* **Automation:** Use some other method of automation such as powershell or REST-API to resize a VM.
+
+
+Anomaly Detection
 +++++++++++++++++++++++++++++++
 
-In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-FIT alogrythms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM.
+In this lab story you will take a look at VMs with an anomaly. An anomaly is a deviation from the normal learned behavior of a VM. The X-FIT alogrithms learn the normal behavior of VMs and represent that as a baseline range on the different charts for each VM.
 
 #. Now let's take a take a look at a VM by searching for ‘bootcamp_good’ and selecting ‘bootcamp_good_1’.
 
    .. figure:: images/ppro_61.png
 
-
-#. Go to Metrics > CPU Usage. Notice the expected range for this item has learned some patterns for the CPU Usage for this VM. Notice a dark blue line, and a lighter blue area around it. The line is the Memory Usage. The light blue area is the expected Memory Usage range for this VM. This range is calculated using Prism Pro’s X-FIT machine learning engine. In this case, an anomaly has been raised for this VM, because the Usage is far below the expected range. You can also reduce the time range “Last 24 hours” to examine the chart more closely.
+#. Go to Metrics > CPU Usage. Notice a dark blue line, and a lighter blue area around it. The dark blue line is the CPU Usage. The light blue area is the expected CPU Usage range for this VM. This range is calculated using Prism Pro’s X-FIT machine learning engine. In this case, an anomaly has been raised for this VM, because the Usage is far below the expected range. You can also reduce the time range “Last 24 hours” to examine the chart more closely.
 
    .. figure:: images/ppro_60.png
 
@@ -126,27 +112,28 @@ In this lab story you will take a look at VMs with an anomaly. An anomaly is a d
 
    .. figure:: images/ppro_25.png
 
-#. Save the policy.
+#. Hit **Cancel** to exit the policy creation workflow.
 
+Prism Central Resource Planning
++++++++++++++++++++++++++++++++
 
+Nutanix utilizes our X-Fit machine learning and data analytics as part of Prism Pro. We utilize that machine learning and data analytics to provide Cluster Runway and just in time forecasting (What If Planning).
 
+Capacity Runway
+...............
 
-Lab Story 3 - Capacity Planning Runway
-++++++++++++++++++++++++++++++++++++++
+Use Prism Central’s Capacity Runway feature to learn about cluster resource planning and recommendations.
 
-Capacity runway is a measure of the remaining capacity left within a given cluster or node. There is an overall cluster runway as well as individual runway measurements for CPU, Memory and storage capacity. Lets view the Capacity Runway of your lab cluster.
+Lets view the Capacity Runway of your lab cluster.
 
-#. Navigate to ‘Planning’ using the search bar.
+#. In **Prism Central > Planning > Capacity Runway**.
 
-   .. figure:: images/ppro_09.png
+- Note the runway summaries showing the days left for each cluster.
+- How long does the current cluster has before it runs out of memory, CPU, and storage?
 
-#. Click on the **‘Capacity Runway’** tab and select the cluster ‘Prism-Pro-Cluster’.
+#. Click on the **Prism-Pro-Cluster** cluster.
 
-   .. figure:: images/ppro_10.png
-
-   .. figure:: images/ppro_11.png
-
-#. You can now take a look at the Runway for Storage, CPU, and Memory.
+. You can now take a look at the Runway for Storage, CPU, and Memory.
 
    .. figure:: images/ppro_12.png
 
@@ -159,6 +146,9 @@ Capacity runway is a measure of the remaining capacity left within a given clust
    .. figure:: images/ppro_14.png
 
 #. Close the optimize resources popup.
+
+What If Planning
+................
 
 #. Under the **‘Adjust Resources’** section in the left side of this page, click the **‘Get Started’** button. We can now use this to start planning for new workloads and see how runway will need to be extended in the future.
 
@@ -190,15 +180,12 @@ Capacity runway is a measure of the remaining capacity left within a given clust
 
    .. figure:: images/ppro_20.png
 
-
-
-
-Lab Story 4 - Increase Constrained VM Memory with X-Play
+Increase Constrained VM Memory with X-Play
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In this lab story we will now use X-Play to create a Playbook to automatically add memory to the lab VM that was created earlier, when a memory constraint is detected.
 
-#. Click on the Hamburger menu and choose Operations > Playbooks.
+#. Use the search bar to navigate to the **Playbooks** page.
 
    .. figure:: images/ppro_26.png
 
@@ -210,28 +197,27 @@ In this lab story we will now use X-Play to create a Playbook to automatically a
 
    .. figure:: images/ppro_28.png
 
-#. Search and select **VM Memory Constrained** as the alert policy, since this is the issue we are looking to take automated steps to remediate.
+#. Search and select **VM {vm_name} Memory Constrained** as the alert policy, since this is the issue we are looking to take automated steps to remediate.
 
    .. figure:: images/ppro_29.png
 
-#. We will first need to snapshot the VM. Click **Add Action** on the left side and select the **VM snapshot** action.
+#. Select the *Specify VMs* radio button and choose the VM you created for the lab. This will make it so only alerts raised on your VM will trigger this Playbook.
+
+   .. figure:: images/ppro_29b.png
+
+#. We will first need to snapshot the VM. Click **Add Action** on the left side and select the **VM Snapshot** action.
 
    .. figure:: images/ppro_30.png
 
-
-#. Select **Source Entity** from the parameters link below field. Source entity means the entity triggers the alert.
-
-   .. figure:: images/ppro_31.png
-
-#. Enter a **1** in the Time to Live field.
+#. The Target VM is auto filled with the source entity from the Alert trigger. To finish filling the details for this action, enter a value, such as **1**, in the Time to Live field.
 
    .. figure:: images/ppro_32.png
 
-#. Next we would like to remediate the constrained memory by adding more memory to the VM. Click **Add Action** to add the **Hot add memory** action
+#. Next we would like to remediate the constrained memory by adding more memory to the VM. Click **Add Action** to add the **VM Add Memory** action
 
    .. figure:: images/ppro_33.png
 
-#. Select **source entity** from parameters link for the target VM field, and set rest of field according to the screen below.
+#. Set the empty fields according to the screen below.
 
    .. figure:: images/ppro_34.png
 
@@ -242,17 +228,15 @@ In this lab story we will now use X-Play to create a Playbook to automatically a
 
 #. Fill in the field in the email action. Here are the examples
 
-**Recipient:** use your email email address
+**Recipient:** Fill in your email address.
 
 **Subject :**
-Playbook {{playbook.playbook_name}} addressed alert {{trigger[0].alert_entity_info.name}}
+``Playbook {{playbook.playbook_name}} addressed alert {{trigger[0].alert_entity_info.name}}``
 
 **Message:**
-Prism Pro X-FIT detected  {{trigger[0].alert_entity_info.name}} in {{trigger[0].source_entity_info.name}}.  Prism Pro X-Play has run the playbook of "{{playbook.playbook_name}}". As a result, Prism Pro increased 1GB memory in {{trigger[0].source_entity_info.name}}.
+``Prism Pro X-FIT detected  {{trigger[0].alert_entity_info.name}} in {{trigger[0].source_entity_info.name}}.  Prism Pro X-Play has run the playbook of "{{playbook.playbook_name}}". As a result, Prism Pro increased 1GB memory in {{trigger[0].source_entity_info.name}}.``
 
-The attendee is encouraged to compose their own subject tor message. The above is just an example. They are encouraged to use “parameter” to enrich the message.
-
-Note: there is a bug right now that when you click a parameter in the “parameter” popup, the parameter string will be appended at the end of the text string, not at the place of the cursor. You have to cut and paste it into the correct place if that is the case.
+You are welcome to compose your own subject message. The above is just an example. You could use the “parameters” to enrich the message.
 
    .. figure:: images/ppro_36.png
 
@@ -260,11 +244,7 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_37.png
 
-#. Select **Alert** in the parameter link pop up.
-
-   .. figure:: images/ppro_38.png
-
-#. Click **Save & Close** button and save it with a name “Auto Increase Constrained VM Memory” and make sure toggle the **enable button**.
+#. Click **Save & Close** button and save it with a name “*Initials* - Auto Increase Constrained VM Memory”. **Be sure to enable the ‘Enabled’ toggle.**
 
    .. figure:: images/ppro_39.png
 
@@ -272,11 +252,11 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_40.png
 
-#. Search VM “PrismProVM” and record the current memory capacity. You can scroll down in the properties widget to see the configured memory.
+#. Search for your VM and record the current memory capacity. You can scroll down in the properties widget to see the configured memory.
 
    .. figure:: images/ppro_41.png
 
-#. **Switch tabs back to** the http://10.42.247.70:3000/ page and continue to the Story 1-3 Step.
+#. **Switch tabs back to** the http://10.42.247.70 page and continue to the Story 1-3 Step.
 
    .. figure:: images/ppro_66.png
 
@@ -284,11 +264,11 @@ Note: there is a bug right now that when you click a parameter in the “paramet
 
    .. figure:: images/ppro_64.png
 
-#. Go back to Prism page and check the “PrismProVM” page again, you should now see the memory capacity is increased by 1GB. If the memory does not show updated you can refresh the browser page to speedup the process.
+#. Go back to Prism page and check your VMs page again, you should now see the memory capacity is increased by 1GB. If the memory does not show updated you can refresh the browser page to speedup the process.
 
 #. You should also receive an email. Check the email to see that its subject and email body have filled the real value for the parameters you set up.
 
-#. Go to the **Playbook** page, click the playbook you just created and click the **disable** button in the upper right corner to disable this playbook
+#. Go to the **Playbook** page, click the playbook you just created.
 
    .. figure:: images/ppro_44.png
 
@@ -301,13 +281,21 @@ Note: there is a bug right now that when you click a parameter in the “paramet
    .. figure:: images/ppro_46.png
 
 
-Lab Story 5 - Using X-Play with 3rd Party API
+Using X-Play with 3rd Party API
 +++++++++++++++++++++++++++++++++++++++++++++
 
 For this story we will be using Habitica to show how we can use 3rd Party APIs with X-Play. Habitica is a free habit and productivity app that treats your real life like a game. We will be creating a task with Habitica.
 
 
-#. Use the hamburger menu to navigate to Operations > Action Gallery.
+#. Use the search bar to navigate to the **Playbooks** page.
+
+   .. figure:: images/ppro_26.png
+
+#. We will start by creating a Playbook. Click **Create Playbook** at the top of the table view
+
+   .. figure:: images/ppro_27.png
+
+#. Use the search bar to navigate to the **Action Gallery** page.
 
    .. figure:: images/ppro_47.png
 
@@ -315,43 +303,42 @@ For this story we will be using Habitica to show how we can use 3rd Party APIs w
 
    .. figure:: images/ppro_48.png
 
-#. We are creating a template that we can later use in our playbook to create a Task in Habitica. Fill in the following values replacing your name in the <YOUR NAME HERE> part.
+#. We are creating an Action that we can later use in our playbook to create a Task in Habitica. Fill in the following values replacing your name in the <YOUR NAME HERE> part.
 
-**Name:** Create Habitica Task
+**Name:** *Initials* - Create Habitica Task
 
 **Method:** POST
 
 **URL:** https://habitica.com/api/v3/tasks/user
 
-**Request Body:** {"text":"<YOUR NAME HERE> Check {{trigger[0].source_entity_info.name}}","type":"todo","notes":"VM has been detected as a bully VM and has been temporarily powered off.","priority":2}
+**Request Body:** ``{"text":"*Initials* Check {{trigger[0].source_entity_info.name}}","type":"todo","notes":"VM has been detected as a bully VM and has been temporarily powered off.","priority":2}``
 
 **Request Header:**
 
-x-api-user:fbc6077f-89a7-46e1-adf0-470ddafc43cf
+| x-api-user:fbc6077f-89a7-46e1-adf0-470ddafc43cf
+| x-api-key:c5343abe-707a-4f7c-8f48-63b57f52257b
+| Content-Type:application/json;charset=utf-8
 
-x-api-key:c5343abe-707a-4f7c-8f48-63b57f52257b
-
-Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_49.png
 
-#. Click the **copy** button to save the template.
+#. Click the **copy** button to save the action.
 
-#. Navigate using the Hamburger menu back to Operations > Playbooks and click the Create Playbook button.
+#. Navigate back to the Playbooks page using the search bar.
 
-#. Select the **Alert trigger** and search for and select the alert policy **VM Bully Detected**. This is the alert that we would like to act on to handle when the system detects a Bully VM.
+#. Select the **Alert trigger** and search for and select the alert policy **VM Bully {vm_name}**. This is the alert that we would like to act on to handle when the system detects a Bully VM.
 
    .. figure:: images/ppro_50.png
 
-#. The first thing we would like to do is Power off the VM, so we can make sure it is not starving other VMs of resources. Click the **Add Action** button and select **Power Off VM**. Select the Parameter for **Source Entity** as you did in Story 3.
+#. Select the **Specify VMs** radio button and choose the VM you created for the lab. This will make it so only alerts raised on your VM will trigger this Playbook.
+
+   .. figure:: images/ppro_50b.png
+
+#. The first thing we would like to do is Power off the VM, so we can make sure it is not starving other VMs of resources. Click the **Add Action** button and select **Power Off VM**.
 
    .. figure:: images/ppro_51.png
 
-#. Also be sure to select **Power off** for Type of Power Off Action.
-
-   .. figure:: images/ppro_52.png
-
-#. Next we would like to create a task so that we can look into what is causing this VM to be a Bully. Add another Action. This time select the template you created called, Create Habitica Task.
+#. Next we would like to create a task so that we can look into what is causing this VM to be a Bully. Add another Action. This time select the action you created called, Create Habitica Task.
 
    .. figure:: images/ppro_53.png
 
@@ -359,19 +346,35 @@ Content-Type:application/json;charset=utf-8
 
    .. figure:: images/ppro_54.png
 
-#. Save & Enable the playbook. You can name it  ‘Power Off Bully VM for Investigation’. Be sure to enable the ‘Enabled’ toggle.
+#. Save & Enable the playbook. You can name it  “*Initials* - Power Off Bully VM for Investigation”. **Be sure to enable the ‘Enabled’ toggle.** Click the Save button.
 
    .. figure:: images/ppro_55.png
 
-#. **Switch back to the other tab** running http://10.42.247.70:3000/ and Simulate the ‘VM Bully Detected’ alert for Story 5.
+#. **Switch back to the other tab** running http://10.42.247.70 and Simulate the ‘VM Bully Detected’ alert for Story 5.
 
    .. figure:: images/ppro_65.png
 
-#. Once the alert is successfully simulated, you can log in to Habitica in another tab at https://habitica.com using the credentials:
+#. Once the alert is successfully simulated, you can check that your Playbook ran, and view the details as before.
 
-Username : next19LabUser
-Password: Nutanix.123
+   .. figure:: images/ppro_75.png
+
+#. You can verify the Rest API was called for Habitica by logging in from another tab at https://habitica.com using the credentials:
+
+| Username : next19LabUser
+| Password: Nutanix.123
 
 And verify your task is created.
 
    .. figure:: images/ppro_57.png
+
+Takeaways
++++++++++
+
+- Prism Pro is our solution to make IT OPS smarter and automated. It covers the IT OPS process ranging from intelligent detection to automated remediation.
+- X-FIT is our machine learning engine to support smart IT OPS, including forecast, anomaly detection, and inefficiency detection.
+- The Capacity Runway view in the Planning dashboard allows you to view summary resource runway information for the registered clusters and access detailed runway information about each cluster.
+- The Scenarios view in the Planning dashboard allows you to create "what if" scenarios to assess the future resource requirements for potential work loads that you specify.
+- You must have a Prism Pro license to use the resource planning tools.
+- X-Play, the IFTTT for the enterprise, is our engine to enable the automation of daily operations tasks.
+- X-Play enables admins to confidently automate their daily tasks within minutes.
+- X-Play is extensive that can use customer’s existing APIs and scripts as part of its playbooks.
