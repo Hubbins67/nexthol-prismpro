@@ -40,7 +40,7 @@ Applications provisioned as part of the  :ref:`linux_tools_vm_cloud-init` will b
 
 #. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through the labs.
 
-Lab Story 1 - VM Efficiency
+VM Efficiency
 +++++++++++++++++++++++++++
 
 Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running within the managed clusters. Then applies a classification to VMs that are learned to be inefficient. The following are short descriptions of the different classifications:
@@ -50,8 +50,9 @@ Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running wit
 * **Constrained:** VMs that could see improved performance with additional resources.
 * **Bully:** VMs identified as using an abundance of resources and affecting other VMs.
 
+#. In **Prism Central**, select :fa:`bars` **> Dashboard** (if not already there).
 
-#. If not already on the Dashboard, open the Hamburger menu and select the Dashboard. From the Dashboard, take a look at the VM Efficiency widget. This widget gives a summary of inefficient VMs that Prism Pro’s X-FIT machine learning has detected in your environment. Click on the ‘View All Inefficeint VMs’ link at the bottom of the widget to take a closer look.
+#. From the Dashboard, take a look at the VM Efficiency widget. This widget gives a summary of inefficient VMs that Prism Pro’s X-FIT machine learning has detected in your environment. Click on the ‘View All Inefficeint VMs’ link at the bottom of the widget to take a closer look.
 
    .. figure:: images/ppro_58.png
 
