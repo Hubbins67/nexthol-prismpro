@@ -34,38 +34,11 @@ Applications provisioned as part of the  :ref:`linux_tools_vm_cloud-init` will b
 #. Please follow the instructions to deploy the :ref:`linux_tools_vm_cloud-init` before moving on with this lab.
 
 
-#. Right click the following URL to open a new tab and navigate to the webpage at http://10.42.247.70 and enter the details in the Setup portion of the form. Then click 'Begin Setup' once you have filled in all the fields. This will get your environment ready for this lab. **Keep this tab open during entire Prism Pro lab to return to as directed in later portions.**
+#. Right click the following URL to open a new tab and navigate to the webpage at http://10.42.247.70:8080/ and enter the details in the Setup portion of the form. Then click 'Begin Setup' once you have filled in all the fields. This will get your environment ready for this lab. **Keep this tab open during entire Prism Pro lab to return to as directed in later portions.**
 
    .. figure:: images/ppro_08.png
 
 #. After hitting continue, it will take a bit of time for the setup to complete. In the meantime, switch back to Prism Central and go through the labs.
-
-VM Efficiency
-+++++++++++++++++++++++++++
-
-Prism Pro uses X-Fit machine learning to detect the behaviors of VMs running within the managed clusters. Then applies a classification to VMs that are learned to be inefficient. The following are short descriptions of the different classifications:
-
-* **Overprovisioned:** VMs identified as using minimal amounts of assigned resources.
-* **Inactive:** VMs that have been powered off for a period of time or that are running VMs that do not consume any CPU, memory, or I/O resources.
-* **Constrained:** VMs that could see improved performance with additional resources.
-* **Bully:** VMs identified as using an abundance of resources and affecting other VMs.
-
-#. In **Prism Central**, select :fa:`bars` **> Dashboard** (if not already there).
-
-#. From the Dashboard, take a look at the VM Efficiency widget. This widget gives a summary of inefficient VMs that Prism Pro’s X-FIT machine learning has detected in your environment. Click on the ‘View All Inefficeint VMs’ link at the bottom of the widget to take a closer look.
-
-   .. figure:: images/ppro_58.png
-
-#. You are now viewing the Efficiency focus in the VMs list view with more details about why Prism Pro flagged these VMs. You can hover the text in the Efficiency detail column to view the full description.
-
-   .. figure:: images/ppro_59.png
-
-#. Once an admin has examined the list of VM on the efficiency list they can determine any that they wish to take action against. From VMs that have too many or too little resources they will require the individual VMs to be resized. This can be done in a number of ways with a few examples listed below:
-
-* **Manually:** An admin edits the VM configuration via Prism or vCenter for ESXi VMs and changes the assigned resources.
-* **X-Play:** Use X-Plays automated play books to resize VM(s) automatically via a trigger or admins direction. There will be a lab story example of this later in this lab.
-* **Automation:** Use some other method of automation such as powershell or REST-API to resize a VM.
-
 
 VM Efficiency
 +++++++++++++++++++++++++++
