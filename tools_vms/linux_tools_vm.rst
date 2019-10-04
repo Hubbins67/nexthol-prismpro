@@ -35,7 +35,7 @@ Fill out the following fields:
     - Select **Add**
 
 - Select **Add New NIC**
-    - **VLAN Name** - Secondary
+    - **VLAN Name** - Primary
     - Select **Add**
 
 - Check **Custom Script**
@@ -105,5 +105,8 @@ Verify Tools Install
 ++++++++++++++++++++
 
 Open Console session.
+
+- **User** - root
+- **Password** - nutanix/4u
 
 Watch as the Cloud-Init script is run, and once you see **CentOS 7 Tools Machine setup successfully!** you are done.
